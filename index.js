@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const path = require("path");
 // const prisma = re
 // import prisma from "./src/middlewares/prisma";
 // import jwt from "./src/middlewares/jwt";
@@ -28,9 +29,14 @@ app.use(bodyParser.json());
 //   })
 // );
 
+// app.get("/api", (req, res) => {
+//   return res.send([req.path]);
+// });
+
+// accept all
 app.get("*", (req, res) => {
-  return res.send([req.path]);
-});
+  res.send({"message": "Welcome to the API"});
+})
 
 // app.listen(port, () => {
 //   console.log("Server started on port 5000");
