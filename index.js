@@ -32,6 +32,9 @@ app.get("*", (req, res) => {
   return res.send([req.path]);
 });
 
-app.listen(port, () => {
-  console.log("Server started on port 5000");
-});
+// app.listen(port, () => {
+//   console.log("Server started on port 5000");
+// });
+
+
+module.exports = app;
