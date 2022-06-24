@@ -41,9 +41,12 @@ router.get("/", (req, res) => {
 
 app.use('/api', router)
 
-// app.listen(port, () => {
-//   console.log("Server started on port 5000");
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+})
 
+app.listen(port, () => {
+  console.log("Server started on port ", port);
+});
 
 module.exports = app;
