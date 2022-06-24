@@ -33,10 +33,13 @@ app.use(bodyParser.json());
 //   return res.send([req.path]);
 // });
 
-// accept all
-app.get("*", (req, res) => {
-  res.send({"message": "Welcome to the API"});
+const router = express.Router();
+router.get("/", (req, res) => {
+  res.send("Hello World!");
 })
+
+
+app.use('/api', router)
 
 // app.listen(port, () => {
 //   console.log("Server started on port 5000");
